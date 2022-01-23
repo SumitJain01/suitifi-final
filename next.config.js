@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
-require('dotenv').config();
-const axios = require('axios');
-const withOffline = require('next-offline');
-const { path: ramdaPath } = require("ramda");
-const path = require('path');
+// require('dotenv').config();
+// const axios = require('axios');
+// const withOffline = require('next-offline');
+// const { path: ramdaPath } = require("ramda");
+// const path = require('path');
 // const WebpackPwaManifest = require("webpack-pwa-manifest");
 
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -13,53 +13,53 @@ const path = require('path');
 // const apiPath = `^${process.env.API_URL}`;
 // const apiUrl = `${process.env.API_URL}`;
 
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
-const workboxOpts = {
-  clientsClaim: true,
-  skipWaiting: true,
-  modifyURLPrefix: {
-    '.next': '/_next',
-  },
-  globIgnores: ['_next/static/*'],
-  runtimeCaching: [
-    // {
-    //   urlPattern: new RegExp(apiPath),
-    //   handler: 'NetworkFirst',
-    //   options: {
-    //     cacheName: 'request-cache',
-    //     cacheableResponse: {
-    //       statuses: [200],
-    //     },
-    //   },
-    // },
-    // {
-    //   urlPattern: new RegExp('^https://fonts.gstatic.com/'),
-    //   handler: 'CacheFirst',
-    //   options: {
-    //     cacheName: 'font-cache',
-    //     cacheableResponse: {
-    //       statuses: [200],
-    //     },
-    //   },
-    // },
-    {
-      urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
-      handler: 'CacheFirst',
-      options: {
-        cacheName: 'image-cache',
-        cacheableResponse: {
-          statuses: [200],
-        },
-        expiration: {
-          maxEntries: 40,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-          purgeOnQuotaError: true,
-        },
-      },
-    },
-  ],
-};
+// const workboxOpts = {
+//   clientsClaim: true,
+//   skipWaiting: true,
+//   modifyURLPrefix: {
+//     '.next': '/_next',
+//   },
+//   globIgnores: ['_next/static/*'],
+//   runtimeCaching: [
+//     // {
+//     //   urlPattern: new RegExp(apiPath),
+//     //   handler: 'NetworkFirst',
+//     //   options: {
+//     //     cacheName: 'request-cache',
+//     //     cacheableResponse: {
+//     //       statuses: [200],
+//     //     },
+//     //   },
+//     // },
+//     // {
+//     //   urlPattern: new RegExp('^https://fonts.gstatic.com/'),
+//     //   handler: 'CacheFirst',
+//     //   options: {
+//     //     cacheName: 'font-cache',
+//     //     cacheableResponse: {
+//     //       statuses: [200],
+//     //     },
+//     //   },
+//     // },
+//     {
+//       urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
+//       handler: 'CacheFirst',
+//       options: {
+//         cacheName: 'image-cache',
+//         cacheableResponse: {
+//           statuses: [200],
+//         },
+//         expiration: {
+//           maxEntries: 40,
+//           maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+//           purgeOnQuotaError: true,
+//         },
+//       },
+//     },
+//   ],
+// };
 
 // module.exports = withBundleAnalyzer({
 //   images: {
