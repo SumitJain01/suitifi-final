@@ -6,7 +6,7 @@
     "precommit": "eslint ./",
     "dev": "next dev -p 4000",
     "build": "next build ",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build",
     "export": "npm run build && next export"
   },
