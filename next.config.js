@@ -4,7 +4,7 @@ const axios = require('axios');
 const withOffline = require('next-offline');
 const { path: ramdaPath } = require("ramda");
 const path = require('path');
-const WebpackPwaManifest = require("webpack-pwa-manifest");
+// const WebpackPwaManifest = require("webpack-pwa-manifest");
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
