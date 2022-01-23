@@ -1,0 +1,22 @@
+node_modules/
+.git/
+.next/
+out/
+bundle/
+bundles/
+**/.DS_Store
+# Use yarn.lock instead
+# package-lock.json
+
+# Environment variables
+.env
+
+static/workbox
+static/appicons
+*/.DS_Store
+#.gitlab-ci.yml
+#generate-env-staging.sh
+#generate-env-production.sh
+
+package-lock.json
+yarn.lock
