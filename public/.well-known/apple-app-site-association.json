@@ -1,0 +1,11 @@
+{
+    "applinks": {
+    "apps": [],
+    "details": [
+    {
+    "appID": "N6Z3NT5HH7.com.mamaearthapp",
+    "paths": ["NOT /checkout", "NOT /checkout*", "NOT /checkout/", "/"]
+    }
+    ]
+    }
+    }

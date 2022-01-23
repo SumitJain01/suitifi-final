@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12.8" viewBox="0 0 16 12.8">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#777}
+        </style>
+    </defs>
+    <g id="prefix__Group_738" data-name="Group 738" transform="translate(0 -1.6)">
+        <path id="prefix__Path_19305" d="M15.2 1.6H.8a.756.756 0 0 0-.8.8v11.2a.756.756 0 0 0 .8.8h14.4a.756.756 0 0 0 .8-.8v-4h-5.6A1.6 1.6 0 0 1 8.8 8a1.6 1.6 0 0 1 1.6-1.6H16v-4a.756.756 0 0 0-.8-.8z" class="prefix__cls-1" data-name="Path 19305"/>
+        <circle id="prefix__Ellipse_42" cx=".8" cy=".8" r=".8" class="prefix__cls-1" data-name="Ellipse 42" transform="translate(9.6 7.2)"/>
+    </g>
+</svg>

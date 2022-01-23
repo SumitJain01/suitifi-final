@@ -1,0 +1,25 @@
+import PageTitleComponent from './PageTitle';
+import SingleImageBannerComponent from './SingleImageBanner';
+import ResponsiveImageBannerComponent from './ResponsiveImageBanner';
+import ProductListBySlugsComponent from './ProductListBySlugs';
+import HTMLBlockComponent from './HTMLBlock';
+import FeedbackComponent from './Feedback';
+import ProductListByCatIdComponent from './ProductListByCatId';
+import ProductCatHeadingComponent from './ProductCatHeading';
+import OfferSliderComponent from './OfferSlider';
+import MainSliderComponent from './MainSlider';
+import CountDownComponent from './CountDown';
+import FAQComponent from './FAQ';
+
+export const PageTitle = PageTitleComponent;
+export const SingleImageBanner = SingleImageBannerComponent;
+export const ResponsiveImageBanner = ResponsiveImageBannerComponent;
+export const ProductListBySlugs = ProductListBySlugsComponent;
+export const HTMLBlock = HTMLBlockComponent;
+export const Feedback = FeedbackComponent;
+export const ProductListByCatId = ProductListByCatIdComponent;
+export const ProductCatHeading = ProductCatHeadingComponent;
+export const OfferSliderBlock = OfferSliderComponent;
+export const MainSlider = MainSliderComponent;
+export const CountDown = CountDownComponent;
+export const FAQ = FAQComponent;

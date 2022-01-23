@@ -1,0 +1,10 @@
+{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+    "namespace": "android_app",
+    "package_name": "com.mamaearthapp",
+    "sha256_cert_fingerprints": [
+    "F7:BD:3B:5F:7F:03:49:19:F6:E2:72:6E:9A:AF:82:C1:98:71:17:24:9E:B4:2C:BD:54:1F:E5:F5:62:E8:61:E7"
+    ]
+    }
+    }

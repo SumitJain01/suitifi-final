@@ -1,0 +1,191 @@
+{
+  "name": "suitify-pwa",
+  "version": "0.0.1",
+  "license": "ISC",
+  "scripts": {
+    "precommit": "eslint ./",
+    "dev": "next dev -p 4000",
+    "build": "next build ",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
+    "export": "npm run build && next export"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.6",
+    "graphql": "^15.4.0",
+    "@material-ui/core": "^4.12.2",
+    "algoliasearch": "^3.33.0",
+    "axios": "^0.19.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-ramda": "^2.0.0",
+    "cogo-toast": "^3.0.0",
+    "dotenv": "^7.0.0",
+    "es6-promise": "4.1.1",
+    "formik": "^2.2.9",
+    "immer": "^2.0.0",
+    "md5": "^2.2.1",
+    "memoize-one": "^5.0.5",
+    "mobile-detect": "^1.4.3",
+    "nanoid": "^2.0.3",
+    "next": "^10.2.3",
+    "next-offline": "^4.0.6",
+    "next-redux-wrapper": "^6.0.2",
+    "next-seo": "^3.0.0",
+    "polished": "^3.2.0",
+    "popmotion": "^8.4.1",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
+    "ramda-adjunct": "^2.19.0",
+    "react": "17.0.2",
+    "react-accessible-accordion": "^2.4.5",
+    "react-content-loader": "^5.0.2",
+    "react-dom": "17.0.2",
+    "react-icons-kit": "^1.3.1",
+    "react-image-gallery": "^0.8.18",
+    "react-images-uploading": "^3.1.2",
+    "react-lazyload": "3.2.0",
+    "react-pose": "^4.0.8",
+    "react-ratings-declarative": "^3.4.1",
+    "react-redux": "^7.1",
+    "react-select": "^2.4.3",
+    "react-slick": "^0.25.2",
+    "react-styled-flexboxgrid": "^2.6.0",
+    "react-visibility-sensor": "^5.0.2",
+    "redux": "4.0.0",
+    "redux-saga": "^1.1.1",
+    "sharp": "^0.29.0",
+    "ssr-window": "^1.0.1",
+    "styled-components": "^4.0.2",
+    "sweetalert2-react": "^0.8.3",
+    "url": "^0.11.0",
+    "url-parse": "^1.4.7",
+    "use-onclickoutside": "^0.3.1",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@babel/runtime-corejs2": "^7.12.13",
+    "@next/bundle-analyzer": "^9.0.6",
+    "babel-eslint": "8.2.3",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-styled-components": "^1.8.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-import-resolver-webpack": "0.10.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-module-resolver": "^0.8.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "eslint-plugin-react": "7.9.1",
+    "eslint-plugin-redux-saga": "^1.1.0",
+    "redux-devtools-extension": "2.13.2",
+    "webpack-pwa-manifest": "^4.0.0",
+    "yarn": "^1.17.3"
+  },
+  "//": "This is our babel config, I prefer this over a .babelrc file",
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "module-resolver",
+            {
+              "root": [
+                "./"
+              ],
+              "alias": {
+                "components": "./components",
+                "modules": "./modules"
+              }
+            }
+          ],
+          [
+            "ramda",
+            {
+              "useES": false
+            }
+          ],
+          [
+            "lodash"
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "lodash",
+            {
+              "id": [
+                "lodash-es"
+              ]
+            }
+          ],
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "module-resolver",
+            {
+              "root": [
+                "./"
+              ],
+              "alias": {
+                "components": "./components"
+              }
+            }
+          ],
+          [
+            "ramda",
+            {
+              "useES": false
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
