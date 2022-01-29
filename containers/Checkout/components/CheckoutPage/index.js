@@ -169,15 +169,15 @@ function CheckoutPage({
               </div>
             </Col>
 
-            <Col xs={12} sm={5} md={5} lg={5}>
+            {/* <Col xs={12} sm={5} md={5} lg={5}>
                 <LoadingStateWrapper loading={loading}>
                   <div className="oldOrderSummaryWrapper">
                     <Htag>Order Summary</Htag>
                     <OrderSummary isCheckoutPage />
                   </div>
                 </LoadingStateWrapper>
-            </Col>
-            {isMobile && (
+            </Col> */}
+            {/* {isMobile && (
               <Col xs={12} sm={12} md={7} lg={7}>
                   <LoadingStateWrapper loading={loading || placeOrderLoading}>
                     <CustomPaymentSegment
@@ -188,7 +188,7 @@ function CheckoutPage({
                     />
                   </LoadingStateWrapper>       
               </Col>
-            )}
+            )} */}
           </Row>
         </CheckoutWrapper>
       </LoadingStateWrapper>
