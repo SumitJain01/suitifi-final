@@ -138,7 +138,11 @@ console.log("Hiiiiii");
       className={className}
     >
       {isMobile ? <Divider /> : null}
-    Hi
+      <LoadingStateWrapper loading={otpLoading}>
+        <CheckoutWrapper  isMobile={isMobile}>
+         hii
+        </CheckoutWrapper>
+      </LoadingStateWrapper>
     </Grid>
   );
 }
@@ -261,9 +265,9 @@ const CheckoutWrapper = styled.div`
   }
 
   .mainRow {
-    border: 1px solid
-      ${({ isNewDesign, isMobile }) =>
-    isNewDesign ? (isMobile ? "transparent" : "#dbdbdb") : "transparent"};
+    border: 1px solid 
+      ${({isMobile }) =>
+      isMobile ? "transparent" : "#dbdbdb"};
     margin-top: 0.4rem;
     padding-top: 0rem;
     padding-bottom: 0.4rem;
