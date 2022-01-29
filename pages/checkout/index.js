@@ -7,6 +7,7 @@ function Checkout() {
   useEffect(() => {
     router.prefetch('checkoutSuccess');
   }, []);
+  console.log("Sjjjjjjjjjjjjjjjj");
   return (
     <CheckoutContainer />
   );
