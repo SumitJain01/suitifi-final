@@ -59,7 +59,7 @@ function HomePage({
   }
   const { error, loading, data } = useQuery(loadProductsByCategoryQuery,{
     variables : { 
-      category_id : 2
+      category_id : 3
     }
   });
 

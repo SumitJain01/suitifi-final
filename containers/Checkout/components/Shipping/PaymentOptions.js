@@ -155,11 +155,11 @@ class PaymentOptions extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.methodsAvailable != prevProps.methodsAvailable) {
-      if(!this.props.methodsAvailable.includes('free') && this.props.selectedPaymentMethod=='free'){
+      if(!this.props?.methodsAvailable?.includes('free') && this.props.selectedPaymentMethod=='free'){
         this.props.setPaymentMethod(this.props.methodsAvailable[0]);
         this.setState({ currentTab: 1 })
       }
-      if (this.props.methodsAvailable.includes('free') && this.props.selectedPaymentMethod != 'free') {
+      if (this.props?.methodsAvailable?.includes('free') && this.props.selectedPaymentMethod != 'free') {
         this.props.setPaymentMethod('free');
         this.setState({ currentTab: -1 })
       }
@@ -172,7 +172,7 @@ class PaymentOptions extends Component {
   }
 
   render() {
-    const isFree = this.props.methodsAvailable.includes('free');
+    const isFree = this.props?.methodsAvailable?.includes('free');
     let orderData = {}
     let payMobileAmount = '';
     try {
