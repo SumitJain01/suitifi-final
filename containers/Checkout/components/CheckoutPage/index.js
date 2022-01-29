@@ -138,63 +138,7 @@ console.log("Hiiiiii");
       className={className}
     >
       {isMobile ? <Divider /> : null}
-      <LoadingStateWrapper loading={otpLoading}>
-        <CheckoutWrapper isNewDesign={isNewLoginUI} isMobile={isMobile}>
-          <Row className="mainRow">
-            <Col xs={12} sm={7} md={7} lg={7}>
-              {/* <LoginSegment
-                isActive={currentUIStep === 0}
-                next={() => setCurrentStep(1)}
-                makeActive={() => setCurrentStep(0)}
-              /> */}
-              <div >
-                <AddressSegment
-                  isActive={currentUIStep === 1}
-                  next={() => setCurrentStep(2)}
-                  makeActive={() => setCurrentStep(1)}
-                  setValid={setIsValid}
-                  setPhone={setPhone}
-                  checkError={checkError}
-                  setCheckError={setCheckError}
-                />
-                {!isMobile && (
-                  <LoadingStateWrapper loading={loading || placeOrderLoading}>
-                    <CustomPaymentSegment
-                      isValid={isValid}
-                      setCheckError={setCheckError}
-                      isNewPaymentUI={isNewPaymentUI}
-                      UAisMobile={isMobile}
-                    />
-                  </LoadingStateWrapper>
-                )}
-              </div>
-            </Col>
-
-            <Col xs={12} sm={5} md={5} lg={5}>
-              {!isNewAddressUI && (
-                <LoadingStateWrapper loading={loading}>
-                  <div className="oldOrderSummaryWrapper">
-                    <Htag>Order Summary</Htag>
-                    <OrderSummary isCheckoutPage />
-                  </div>
-                </LoadingStateWrapper>
-              )}
-            </Col>
-            {isMobile && (
-              <Col xs={12} sm={12} md={7} lg={7}>
-                  <LoadingStateWrapper loading={loading || placeOrderLoading}>
-                    <CustomPaymentSegment
-                      isValid={isValid}
-                      setCheckError={setCheckError}
-                      isNewPaymentUI={isNewPaymentUI}
-                      UAisMobile={isMobile}
-                    />
-                  </LoadingStateWrapper>       
-              </Col>
-            )}
-          </Row>
-        </CheckoutWrapper>
-      </LoadingStateWrapper>
+    Hi
     </Grid>
   );
 }
