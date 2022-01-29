@@ -99,10 +99,10 @@ function CustomPaymentSegment({
             router.push('checkoutSuccess');
         }
      },[orderData])
-     console.log("qqqqqqqqq");
     return (
         <Wrapper isNewPaymentUI={isNewPaymentUI}>
-            <PaymentOptions isValid={isValid} setCheckError={setCheckError} placeOrderFunction={placeOrderFunction} isNewPaymentUI={isNewPaymentUI} UAisMobile={UAisMobile}/>
+          ok
+            {/* <PaymentOptions isValid={isValid} setCheckError={setCheckError} placeOrderFunction={placeOrderFunction} isNewPaymentUI={isNewPaymentUI} UAisMobile={UAisMobile}/> */}
         </Wrapper>
     )
 }
