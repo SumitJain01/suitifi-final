@@ -177,18 +177,13 @@ function CheckoutPage({
                   </div>
                 </LoadingStateWrapper>
             </Col>
-            {/* {isMobile && (
+            {isMobile && (
               <Col xs={12} sm={12} md={7} lg={7}>
                   <LoadingStateWrapper loading={loading || placeOrderLoading}>
-                    <CustomPaymentSegment
-                      isValid={isValid}
-                      setCheckError={setCheckError}
-                      isNewPaymentUI={isNewPaymentUI}
-                      UAisMobile={isMobile}
-                    />
+                   hi
                   </LoadingStateWrapper>       
               </Col>
-            )} */}
+            )}
           </Row>
         </CheckoutWrapper>
       </LoadingStateWrapper>
