@@ -37,7 +37,6 @@ function CheckoutPage({
   const [isValid, setIsValid] = useState(false);
   const [phone, setPhone] = useState(false);
   const [checkError, setCheckError] = useState(false);
-  const [newCheckout, setNewCheckout] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isNewLoginUI, setIsNewLoginUI] = useState(false);
   const [isNewAddressUI, setIsNewAddressUI] = useState(false);
@@ -79,73 +78,10 @@ function CheckoutPage({
   }, [])
 
   useEffect(() => {
-    reinitializeCheckout();
-    if (isLoggedIn) {
-      fetchUserInfo();
-    }
-    if (cartProductsArray.length) {
-      trackCheckout({
-        step: 1,
-        products: cartProductsArray,
-        paymentMethod,
-        initiated: true,
-        grandTotal: grandTotalFromSegment,
-      });
-    }
-    return reinitializeCheckout;
-  }, [isLoggedIn]);
-
-  useEffect(() => {
-    if (cartProductsArray.length && currentUIStep !== 1) {
-      trackCheckout({
-        step: currentUIStep,
-      });
-    }
-  }, [currentUIStep]);
-
-  useEffect(() => {
-    let newCheckout = Math.random() > 0.25;
-
-    if (localStorage.getItem("newCheckout")) {
-      newCheckout = JSON.parse(localStorage.getItem("newCheckout"));
-    } else {
-      localStorage.setItem("newCheckout", JSON.stringify(newCheckout));
-    }
-    newCheckout = true;
-    localStorage.setItem("newCheckout", JSON.stringify(newCheckout));
-    if (newCheckout) {
-      window.newCheckout = true;
-      setNewCheckout(true);
-    } else {
-      window.newCheckout = false;
-      setNewCheckout(false);
-    }
     setIsMobile(detectMobile());
   }, []);
 
-  useEffect(() => {
-    let newDesignCheckout = false;
-    let designFlag = mefe && mefe.newDesignCheckout;
-    if (designFlag != undefined && designFlag != null) {
-      newDesignCheckout = designFlag;
-    }
-    if (localStorage.getItem("newDesignCheckout")) {
-      let flag = localStorage.getItem("newDesignCheckout");
-      if (flag == undefined) {
-        flag = false;
-      }
-      newDesignCheckout = JSON.parse(flag);
-    } else {
-      localStorage.setItem(
-        "newDesignCheckout",
-        JSON.stringify(newDesignCheckout)
-      );
-    }
-    window.newDesignCheckout = newDesignCheckout;
-    setIsNewLoginUI(window.newDesignCheckout);
-    setIsNewAddressUI(window.newDesignCheckout);
-    setIsNewPaymentUI(window.newDesignCheckout);
-  }, [mefe]);
+ 
 
   if (emptyCart) {
     return (
@@ -195,7 +131,7 @@ function CheckoutPage({
         </div>
     )
   }
-
+console.log("Hiiiiii");
   return (
     <Grid
       fluid
@@ -221,7 +157,7 @@ function CheckoutPage({
                   checkError={checkError}
                   setCheckError={setCheckError}
                 />
-                {!isMobile && newCheckout && (
+                {!isMobile && (
                   <LoadingStateWrapper loading={loading || placeOrderLoading}>
                     <CustomPaymentSegment
                       isValid={isValid}
@@ -246,7 +182,6 @@ function CheckoutPage({
             </Col>
             {isMobile && (
               <Col xs={12} sm={12} md={7} lg={7}>
-                {newCheckout && (
                   <LoadingStateWrapper loading={loading || placeOrderLoading}>
                     <CustomPaymentSegment
                       isValid={isValid}
@@ -254,8 +189,7 @@ function CheckoutPage({
                       isNewPaymentUI={isNewPaymentUI}
                       UAisMobile={isMobile}
                     />
-                  </LoadingStateWrapper>
-                )}
+                  </LoadingStateWrapper>       
               </Col>
             )}
           </Row>
